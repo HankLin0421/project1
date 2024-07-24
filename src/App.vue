@@ -1,30 +1,24 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <nav-bar></nav-bar>
   <router-view />
+  <c_footer></c_footer>
 </template>
 
+<script setup>
+import navBar from "@/components/c_navbar.vue";
+import c_footer from "@/components/c_footer.vue";
+</script>
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&display=swap");
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans HK", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500px;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  margin: 0;
+  padding: 0;
 }
 </style>

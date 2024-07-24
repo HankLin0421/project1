@@ -1,9 +1,22 @@
 import { createStore } from "vuex";
-
+import { ref } from "vue";
 export default createStore({
-  state: {},
+  state: {
+    ProductClass: [],
+    cartQty: ref(0),
+  },
   getters: {},
-  mutations: {},
+  mutations: {
+    setQty(state, qty) {
+      state.cartQty = qty;
+    },
+    qtyPlus(state) {
+      state.cartQty++;
+    },
+    qtyMinus(state) {
+      state.cartQty--;
+    },
+  },
   actions: {},
   modules: {},
 });
