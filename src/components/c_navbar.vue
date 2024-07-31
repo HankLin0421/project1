@@ -61,9 +61,11 @@ onMounted(() => {
 });
 const setCartQty = () => {
   let CartList = localStorage.getItem("cartlist");
-  let CartListArray = JSON.parse(CartList);
   let qty = 0;
-  CartListArray.forEach(() => qty++);
+  if (!(CartList == "[]" || CartList == null)) {
+    let CartListArray = JSON.parse(CartList);
+    CartListArray.forEach(() => qty++);
+  }
   store.commit("setQty", qty);
 };
 axios

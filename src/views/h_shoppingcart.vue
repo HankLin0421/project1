@@ -131,7 +131,7 @@ const alltotal = computed(() => {
 GetCart();
 async function GetCart() {
   let CartList = localStorage.getItem("cartlist");
-  if (CartList == "[]") {
+  if (CartList == "[]" || CartList == null) {
     emptyCart.value = true;
   } else {
     let CartListArray = JSON.parse(CartList);
